@@ -1,0 +1,16 @@
+# Manage navigation here instead of in an HTML file
+
+#- title: "Home"
+#  href: "/"
+
+- title: "Services"
+  href: "services/"
+
+#- title: "Team"
+#  href: "team/"
+
+- title: "About"
+  href: "about/"
+
+- title: "Contact"
+  href: "contact/"

@@ -1,0 +1,28 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="dns-prefetch" href="//code.jquery.com">
+	<link rel="preload" href="{{ site.baseurl }}{{ site.image_path }}marsella-properties-logo_white.svg" as="image">
+
+{% comment %}
+  Preload all of the Hero assets that the site requires
+{% endcomment %}
+{%- for page in site.pages- %}
+  {%- if page.hero-img -%}
+  <link rel="preload" href="{{ site.baseurl }}{{ site.image_path }}{{ page.hero-img }}" as="image">
+  {%- endif -%}
+{%- endfor -%}
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Donald Smith, Painter">
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+	<meta property="og:site_name" content="{{ site.title }}">
+	<meta property="og:description" content="{{ site.description }}">
+
+  <title>{% if page.html-title %}{{ page.html-title }} | {% else %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+
+  <link rel="stylesheet" type="text/css" href="{{ '/' | relative_url }}assets/css/main.css?{{ "now" | date: "%Y-%m-%d-%H-%M" }}">
+</head>

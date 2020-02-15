@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+  {% include head.html %}
+
+  <body class="l l__{{ page.layout }} page__{{ page.body-class }}">
+    
+    <a href="#content" class="skip-link sr-only sr-only-focusable">Skip to Content</a>
+    
+    <div id="top" class="l__wrapper">
+      <div class="hero{% if page.hero-class %} {{ page.hero-class }}{% endif %}">
+        <div id="animated" class="hero__img animation animation--fade-down">
+          <img src="{{ site.baseurl }}{{ site.image_path }}{{ page.hero-img }}" alt="">
+        </div>
+        <div class="l__container hero__container">
+          <header class="l__header header u__fluid-gutter" role="banner">
+            <a href="{{ site.baseurl }}" title="Back to Home">
+              <img class="main__logo" src="{{ site.baseurl }}{{ site.image_path }}marsella-properties-logo.svg" alt="" />
+              <span class="main__title sr-only">{{ site.title }}</span>
+            </a>
+          </header>
+          <div class="l__mainnav nav__container u__fluid-gutter">
+            <nav class="nav" aria-label="Primary">
+              {% include navigation.html %}
+            </nav>
+          </div>
+          {% if page.hero-text %}
+          <h1 class="hero__content u__fluid-vertical u__fluid-gutter--right h5">
+            {{ page.hero-text}}
+          </h1>
+          {% endif %}
+        </div>
+      </div><!-- end .hero -->
+      
+      {{ content }}
+
+      <footer class="l__footer footer u__fluid-vertical u__fluid-gutter" role="contentinfo">
+        <div class="l__container footer__container">
+          <div class="footer__logo u__fluid-vertical--bottom">
+            <a href="{{ site.baseurl }}" title="Back to Home">
+              <img class="main__logo" src="{{ site.baseurl }}{{ site.image_path }}marsella-properties-logo.svg" alt="" />
+            </a>
+          </div>
+          <div class="footer__nav nav__container">
+            <nav class="nav" aria-label="Secondary">
+              {% include navigation.html %}
+            </nav>
+          </div>
+          <address class="footer__address u__fluid-vertical">
+            <h2 class="sr-only">Contact {{ site.title }}:</h2>
+            <p><a href="tel:401.421.1910">401.421.1910</a></p>
+            <span class="seperator"> // </span>
+            <p><a href="//www.google.com/maps/place/East+Office+Building,+56+Exchange+Terrace,+Providence,+RI+02903/@41.8260211,-71.4119535,3a,75y,329.76h,93.71t/data=!3m7!1e1!3m5!1sTfSb3f1uzAp364UHreWEKw!2e0!3e11!7i13312!8i6656!4m5!3m4!1s0x89e44516d2aaead5:0xb8a7f691d7d8c4b2!8m2!3d41.8261308!4d-71.4116156" target="_blank">56 Exchange Terrace, Providence RI</a></p>
+          </address>
+          <p class="footer__copyright copyright small">&copy;{{ 'now' | date: '%Y' }} {{ site.title }} and <a href="//marselladevelopment.com">Marsella Development</a>.</p>
+        </div>
+      </footer>
+    </div>
+    
+    {% include scripts.html %}
+  </body>
+</html>
