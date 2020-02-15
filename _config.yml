@@ -55,3 +55,6 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
+  - sample-html.html
+  - sample-rhythm.html
+  - team.html
