@@ -1,0 +1,29 @@
+@keyframes fade-down {
+  to {
+    opacity: 0;
+    transform: translateY(25%);
+  } 
+}
+
+.animation {
+  width: 100%;
+  
+  img {
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    max-width: unset;
+    width: 100%;
+  }
+  
+  &--fade-down {
+    img {
+      animation-name: fade-down;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

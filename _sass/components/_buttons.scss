@@ -1,0 +1,77 @@
+.btn {
+  border: 4px solid $color__body-bg !important;
+  background-color: transparent;
+  color: $gray-600;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+
+  &__marsella {
+    padding: 0;
+    
+    &::after {
+      background-color: transparent;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transform: scale(0.6, 0.6);
+      transition: $transition;
+      z-index: -1;
+    }
+    
+    // Super fancy buttons need a nested span inside for the full effect
+    span {
+      display: block;
+      padding: 0.875rem 1.75rem;
+      position: relative;
+      transition: background-color 250ms ease, color 250ms ease;
+      z-index: 1;
+  
+      &::before,
+      &::after {
+        border: $border-width solid $mp-primary;
+        content: '';
+        height: 1.75rem;
+        width: 1.75rem;
+        position: absolute;
+        transition: transform 250ms ease;
+        z-index: 2;
+      }
+      
+      &::before {
+        border-top: 0;
+        border-right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translate(-4px, 4px);
+      }
+      
+      &::after {
+        border-bottom: 0;
+        border-left: 0;
+        top: 0;
+        right: 0;
+        transform: translate(4px, -4px);
+      }
+    }
+    
+    @include hover-focus {
+      color: $white;
+      
+      &::after {
+        background-color: $mp-primary;
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+      
+      span::before,
+      span::after {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}

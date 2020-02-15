@@ -1,0 +1,12 @@
+.section {
+  &__title {
+    font-style: italic;
+    letter-spacing: 0.125em;
+    text-align: center;
+  }
+  
+  &__actions {
+    @extend .u__fluid-vertical;
+    text-align: center;
+  }
+}

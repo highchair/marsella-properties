@@ -1,0 +1,37 @@
+// Layout Classes
+
+//<div id="top" class="l__wrapper">
+//  <header class="l__header main__header" role="banner"></header>
+//  <div class="l__mainnav nav__container">
+//    <nav class="nav" aria-label="Primary"></nav>
+//  </div>
+//  <main class="l__main main__content">
+//    <article class="main__article"></article>
+//  </main>
+//  <footer class="l__footer main__footer" role="contentinfo">
+//    <p class="copyright">©2019 Marsella Properties and <a href="//marselladevelopment.com">Marsella Development</a>.</p>
+//  </footer>
+//</div>
+
+.l {
+  // Most maximum width
+  max-width: 1920px;
+  margin: 0 auto;
+  
+  &__container {
+    margin: 0 auto;
+    max-width: mw();
+  }
+  
+  &__wrapper {
+    background-color: $color__body-bg;
+  }
+  
+  &__header {}
+  
+  &__mainnav {}
+  
+  &__main {}
+  
+  &__footer {}
+}

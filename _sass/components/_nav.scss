@@ -1,0 +1,89 @@
+//<div class="l__mainnav nav__container">
+//  <nav class="nav" aria-label="Primary">
+//    <ul class="nav__list">
+//      <li class="nav__item nav__item--parent">
+//        <a href="/services/" class="nav__link">Services</a>                  
+//      </li>
+//    </ul>
+//  </nav>
+//</div>
+.nav {
+  // Also a flex container thanks to BS4
+  flex-direction: column;
+  justify-content: stretch;
+  
+  &__container {
+    margin-bottom: auto;
+    
+    @include media-breakpoint-up($header-nav--horiz) {
+      padding-top: 2rem;
+    }
+  }
+  
+  &__list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 0 -0.5rem;
+  }
+  
+  &__item {
+    display: block;
+    
+    @include media-breakpoint-up($footer-nav--horiz) {
+      & + & {
+        margin-left: 3vw;
+      }
+    }
+  }
+  
+  &__link {
+    border-bottom: 0;
+    color: $gray-800;
+    //display: block;
+    padding: 0.75rem 0.5rem;
+    line-height: 1;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+    z-index: 1;
+    
+    &::after {
+      background-color: rgba($mp-primary-bright, 0.9);
+      content: '';
+      height: 2px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: scale(0, 1);
+      transition: $transition;
+    }
+
+    @include hover-focus {
+      border-bottom: 0;
+      color: $black;
+
+      &::after {
+        transform: scale(1, 1);
+      }
+    }
+    
+    .hero--dark & {
+      color: $white;
+      
+      @include hover-focus {
+        color: $black;
+      }
+    }
+    
+    @include media-breakpoint-up($header-nav--horiz) {
+      padding: 0.75rem;
+    }
+  }
+  
+  // Modifiers
+  .footer &__list {
+    justify-content: space-around;
+  }
+}

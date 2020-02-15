@@ -1,0 +1,121 @@
+// Global
+// Rules that BS4 does not ship with
+// OR that our simple Reset does not address
+
+pre {
+  background-color: rgba($code-color, 0.1);
+  border-top: 3px solid rgba($code-color, 0.5);
+  border-bottom: 3px solid rgba($code-color, 0.5);
+  line-height: 1.8;
+  padding: $vertical-min $gutter-min;
+  margin-bottom: 1.375rem;
+}
+
+address {
+  font-style: normal;
+}
+
+// BS4 has .text-white but no black
+.text-black {
+  color: $black;
+}
+
+.text-serif {
+  font-family: $font-family-serif;
+}
+
+
+// ** Utilities
+.u__fluid-gutter {
+  @include fluid-units(
+    'padding-left' 'padding-right',
+    $gutter-min,
+    $gutter-max,
+    $min-vp,
+    $max-vp,
+    1rem,
+    true
+  );
+}
+
+.u__fluid-gutter--left {
+  @include fluid-units(
+    'padding-left',
+    $gutter-min,
+    $gutter-max,
+    $min-vp,
+    $max-vp,
+    1rem,
+    true
+  );
+}
+
+.u__fluid-gutter--right {
+  @include fluid-units(
+    'padding-right',
+    $gutter-min,
+    $gutter-max,
+    $min-vp,
+    $max-vp,
+    1rem,
+    true
+  );
+}
+
+.u__fluid-vertical {
+  @include fluid-units(
+    'padding-top' 'padding-bottom',
+    $vertical-min,
+    $vertical-max,
+    $min-vp,
+    $max-vp,
+    1rem,
+    true
+  );
+}
+
+.u__fluid-vertical--top {
+  @include fluid-units(
+    'padding-top',
+    $vertical-min,
+    $vertical-max,
+    $min-vp,
+    $max-vp,
+    1rem,
+    true
+  );
+}
+
+.u__fluid-vertical--bottom {
+  @include fluid-units(
+    'padding-bottom',
+    $vertical-min,
+    $vertical-max,
+    $min-vp,
+    $max-vp,
+    1rem,
+    true
+  );
+}
+
+.skip-link {
+  background-color: $white;
+  display: block;
+  padding: 0.625rem 1.25rem .5rem;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 2;
+  
+  &:focus {
+    position: absolute;
+  }
+}
+
+
+// Placeholders
+%light-sans {
+  font-weight: $font-weight-light;
+  letter-spacing: 0.0625em;
+}
