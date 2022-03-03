@@ -16,8 +16,10 @@
 
 title: Marsella Properties
 description: 'Property management in Providence, Rhode Island offering services including financial, facilities, construction, tenant relationship, and parking as well as vendor administration.'
+github_username: jhogue
+github_repo: "https://github.com/highchair/marsella-properties"
 
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 port: 4050
 url: "//www.marsellaproperties.com" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -44,7 +46,6 @@ sass:
 # Plugins and extras
 plugins:
 - jekyll-autoprefixer
-- jekyll-github-metadata
 
 
 # Exclude from processing.
@@ -52,6 +53,7 @@ plugins:
 # to override the default setting.
 exclude:
   - .gitignore
+  - .nova
   - Gemfile
   - Gemfile.lock
   - LICENSE
