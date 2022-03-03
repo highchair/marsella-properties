@@ -1,8 +1,17 @@
+{%- assign cachebust = "now" | date: "%Y-%m-%d-%H-%M" -%}
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159213605-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159213605-1');
+  </script>
+	
 	<meta charset="utf-8">
 	<link rel="dns-prefetch" href="//code.jquery.com">
 	<link rel="preload" href="{{ site.baseurl }}{{ site.image_path }}marsella-properties-logo_white.svg" as="image">
-
 {% comment %}
   Preload all of the Hero assets that the site requires
 {% endcomment %}
@@ -14,15 +23,30 @@
 
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% comment %}
+  Set a page title that follows this pattern:
+  If home, just page title
+  If not home, page title and the site title separated by a pipe
+{% endcomment %}
+{%- assign htmltitle = page.html-title | default:page.title -%}
+{%- if page.permalink != '/' -%}
+  {% assign htmltitle = htmltitle | append: ' | ' | append: site.title -%}
+{%- endif -%}
 
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Donald Smith, Painter">
+	<title>{{ htmltitle }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="keywords" content="property, management, managers, tenant, relations, relationship, vendor, administration, financial, facility, facilities, maintenance, construction, general contractor, parking, asset, development, capital, budget, conflict resolution, negotiation, lease, rent, zoning">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:type" content="website">
 	<meta property="og:url" content="{{ site.url }}{{ page.url }}">
 	<meta property="og:site_name" content="{{ site.title }}">
-	<meta property="og:description" content="{{ site.description }}">
-
-  <title>{% if page.html-title %}{{ page.html-title }} | {% else %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ site.description }}">
-
-  <link rel="stylesheet" type="text/css" href="{{ '/' | relative_url }}assets/css/main.css?{{ "now" | date: "%Y-%m-%d-%H-%M" }}">
+  <link rel="stylesheet" type="text/css" href="{{ '/' | relative_url }}assets/css/main.css?{{ cachebust }}">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/' | relative_url }}{{ site.icon_path }}apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/' | relative_url }}{{ site.icon_path }}favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/' | relative_url }}{{ site.icon_path }}favicon-16x16.png">
+  <link rel="manifest" href="{{ '/' | relative_url }}{{ site.icon_path }}site.webmanifest">
+  <link rel="mask-icon" href="{{ '/' | relative_url }}{{ site.icon_path }}safari-pinned-tab.svg" color="#2a7ab0">
+  <meta name="msapplication-TileColor" content="#2a7ab0">
+  <meta name="theme-color" content="#2a7ab0">
 </head>
