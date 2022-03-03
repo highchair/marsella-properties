@@ -15,11 +15,11 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Marsella Properties
-description: Portfolio website for Marsella Properties
+description: 'Property management in Providence, Rhode Island offering services including financial, facilities, construction, tenant relationship, and parking as well as vendor administration.'
 
 baseurl: "/" # the subpath of your site, e.g. /blog
 port: 4050
-url: "http://www.marsellaproperties.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "//www.marsellaproperties.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Build settings
@@ -34,6 +34,7 @@ kramdown:
 permalink: /:year/:month/:title:output_ext
 relative_permalinks: false
 image_path: "assets/img/"
+icon_path: "assets/favicons/"
 
 sass:
   sass_dir: _sass
