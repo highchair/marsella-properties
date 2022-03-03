@@ -6,20 +6,38 @@
   // Default alignment is center
   &__img {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center center;
+      width: 100vw;
+      height: 100%;
+      
+      @include media-breakpoint-up(lg) {
+        height: 100%;
+      }
+      
+      @include media-breakpoint-up(xxl) {
+        width: 100%;
+      }
+    }
   }
   
   // Other alignments
-  &--top &__img {
-    top: 0;
-    transform: none;
+  &--top &__img img {
+    object-position: top center;
   }
   
   &--bottom &__img {
-    top: auto;
-    bottom: 0;
-    transform: none;
+    object-position: bottom center;
   }
   
   &::after {
@@ -52,6 +70,10 @@
     justify-content: space-between;
     position: relative;
     z-index: 2;
+    
+    @include media-breakpoint-down(tiny) {
+      max-height: 100vh;
+    }
     
     @include media-breakpoint-up($header-nav--horiz) {
       max-height: 75vh;
@@ -91,6 +113,8 @@
   // Modifiers
   &--dark .header a {
     background-image: url("#{$img-path}marsella-properties-logo_white.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
     
     img { opacity: 0; }
   }
