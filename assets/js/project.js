@@ -23,8 +23,7 @@ $(document).ready(function() {
   
   var container = $('#animated');
   var viewport_height = window.innerHeight;
-  var this_height = container.outerHeight(true);
-  var scroll_height = viewport_height - this_height;
+  var scroll_height = viewport_height;
   
   root.css('--scroll', + window.pageYOffset / (document.body.offsetHeight - scroll_height));
   
