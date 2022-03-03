@@ -11,13 +11,13 @@
 	
 	<meta charset="utf-8">
 	<link rel="dns-prefetch" href="//code.jquery.com">
-	<link rel="preload" href="{{ site.baseurl }}{{ site.image_path }}marsella-properties-logo_white.svg" as="image">
+	<link rel="preload" href="{{ '/' | relative_url }}{{ site.image_path }}marsella-properties-logo_white.svg" as="image">
 {% comment %}
   Preload all of the Hero assets that the site requires
 {% endcomment %}
 {%- for page in site.pages- %}
   {%- if page.hero-img -%}
-  <link rel="preload" href="{{ site.baseurl }}{{ site.image_path }}{{ page.hero-img }}" as="image">
+  <link rel="preload" href="{{ '/' | relative_url }}{{ site.image_path }}{{ page.hero-img }}" as="image">
   {%- endif -%}
 {%- endfor -%}
 
