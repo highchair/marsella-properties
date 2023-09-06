@@ -1,14 +1,16 @@
 source "https://rubygems.org"
 
 gem "jekyll", ">=4.2.0"
-gem "jekyll-watch"
-gem 'jekyll-autoprefixer'
+gem "jekyll-watch", ">=2.0.0"
+gem 'jekyll-autoprefixer', ">=1.0.0"
 gem "jekyll-assets"
-gem "execjs", "2.7.0"
+gem "execjs", "=2.7.0" # Locking due to an issue affecting node version checking
 gem "liquid"
 gem "pygments.rb", ">=1.2.1"
-gem "redcarpet", ">=3.1"
+gem "kramdown", ">= 2.3.0"
 gem "rake", ">=10.0.0"
 gem "sassc",">=2.4.0"
 gem "uglifier",">=4.1.0"
-gem "nokogiri", ">= 1.12.5"
+gem "nokogiri", ">= 1.14.3"
+gem "activesupport", ">=6.0.3.1"
+gem "webrick", "~> 1.7"
