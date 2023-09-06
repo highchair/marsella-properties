@@ -60,13 +60,15 @@ GEM
     mercenary (0.4.0)
     mini_magick (4.11.0)
     multi_json (1.15.0)
-    nokogiri (1.13.3-x86_64-darwin)
+    nokogiri (1.15.4-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-darwin)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
     pygments.rb (2.3.0)
-    racc (1.6.0)
+    racc (1.7.1)
     rack (1.6.13)
     rake (13.0.6)
     rb-fsevent (0.11.1)
@@ -101,6 +103,7 @@ GEM
     unicode-display_width (1.8.0)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-darwin-19
 
 DEPENDENCIES
